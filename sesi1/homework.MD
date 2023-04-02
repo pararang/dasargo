@@ -7,6 +7,7 @@
     - inputnya berupa map dengan: key adalah nama siswa,  dan valuenya adalah nilai siswa
     - return value dari fungsi tersebut berupa map yang berisi dua item, dengan: key  `lulus` dan `tidak_lulus` saja, value masing2 item tersebut adalah slice yang berisi nama2 siswa yg memenuhi syarat masing2 group/key
     - untuk syarat yang dimaksud bisa mengacu pada flowchart di bawah
+5. jika sudah selesai, buat PR ke branch `master` pada repo sumber
 
 ```mermaid
 flowchart TD
