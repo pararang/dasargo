@@ -1,9 +1,9 @@
 package main
 
-func main(){
+func main() {
 
 }
 
-func GroupingStundentByPoint(/*define input*/) /*define result*/{
+func GroupingStundentByPoint( /*define input*/ ) /*define result*/ {
 	// lengkapi logicnya
 }
