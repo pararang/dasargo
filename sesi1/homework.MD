@@ -7,7 +7,7 @@
     - inputnya berupa map dengan: key adalah nama siswa,  dan valuenya adalah nilai siswa. misal: `{"ikhsan": 30, "sans": 70, "ikh": 80}`
     - return value dari fungsi tersebut berupa map yang berisi dua item, dengan: key  `lulus` dan `tidak_lulus` saja, value masing2 item tersebut adalah slice yang berisi nama2 siswa yg memenuhi syarat masing2 group/key. misal: `{"lulus": {"namasiswa1", "namasiswa2"}, "tidak_lulus": {"namasiswa4"}}`
     - untuk syarat yang dimaksud bisa mengacu pada flowchart di bawah
-5. jika sudah selesai, buat PR ke branch `master` pada repo sumber, paling lambat 4 April 2023, pukul 17.30 WIB.
+5. jika sudah selesai, buat PR ke branch `master` pada repo sumber, paling lambat 3 April 2023, pukul 23.00 WIB.
 6. Skor maksimal dalam penilaian tugas ini adalah 10 poin keaktifan.
 7. Boleh dikerjakan bersama dengan teman2 kelompok dalam satu asmen yang sama
 
