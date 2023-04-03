@@ -17,7 +17,7 @@ func main() {
 	fmt.Println(hasil)
 }
 
-func GroupingStundentByPoint(grading map[string]int) map[string][]string {
+func GroupingStudentByPoint(grading map[string]int) map[string][]string {
 
 	var lulus, tidakLulus []string
 
