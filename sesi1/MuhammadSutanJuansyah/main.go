@@ -2,20 +2,37 @@ package main
 
 import (
 	"fmt"
-	"strings"
+	"reflect"
+	"sort"
 )
 
 func main() {
-	nilaiSiswa := map[string]int{
-		"Lorem":   90,
-		"Ipsum":   80,
-		"Dolor":   60,
-		"Sitamet": 50,
+	input := map[string]int{
+		"A": 59,
+		"B": 60,
+		"C": 61,
+		"D": 0,
+		"E": 86,
 	}
 
-	hasil := GroupingStudentByPoint(nilaiSiswa)
-	fmt.Println("Siswa yang lulus:", strings.Join(hasil["lulus"], ", "))
-	fmt.Println("Siswa yang tidak lulus:", strings.Join(hasil["tidak_lulus"], ", "))
+	expectedResult := map[string][]string{
+		"lulus": {
+			"C", "E",
+		},
+		"tidak_lulus": {
+			"A", "B", "D",
+		},
+	}
+
+	result := GroupingStudentByPoint(input)
+
+	sort.Strings(result["lulus"])
+	sort.Strings(result["tidak_lulus"])
+	if !reflect.DeepEqual(expectedResult, result) {
+		fmt.Printf("want: %v\ngot : %v\n", expectedResult, result)
+	} else {
+		fmt.Println("Well Done!")
+	}
 }
 
 func GroupingStudentByPoint(nilaiSiswa map[string]int) map[string][]string {
