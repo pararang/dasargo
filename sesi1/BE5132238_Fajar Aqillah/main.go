@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"sort"
 )
 
 func main() {
@@ -24,6 +25,9 @@ func main() {
 	}
 
 	result := GroupingStudentByPoint(input)
+
+	sort.Strings(result["lulus"])
+	sort.Strings(result["tidak_lulus"])
 	if !reflect.DeepEqual(expectedResult, result) {
 		fmt.Printf("want: %v\ngot : %v\n", expectedResult, result)
 	} else {
