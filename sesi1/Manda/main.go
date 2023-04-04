@@ -2,34 +2,36 @@ package main
 
 import (
 	"fmt"
+	"reflect"
+	"sort"
 )
 
 func main() {
+	input := map[string]int{
+		"A": 59,
+		"B": 60,
+		"C": 61,
+		"D": 0,
+		"E": 86,
+	}
 
-	students := make(map[string]int)
-	var lulus []string
-	var tidak_lulus []string
-	var name string
-	var score int
+	expectedResult := map[string][]string{
+		"lulus": {
+			"C", "E",
+		},
+		"tidak_lulus": {
+			"A", "B", "D",
+		},
+	}
 
-	for {
-		fmt.Printf("Masukkan nama siswa : ")
-		fmt.Scanln(&name)
+	result := GroupingStundentByPoint(input, []string{}, []string{})
 
-		fmt.Printf("Masukkan nilai siswa : ")
-		fmt.Scanln(&score)
-
-		students[name] = score
-
-		fmt.Println(GroupingStundentByPoint(students, lulus, tidak_lulus))
-
-		var pilihan string
-		fmt.Print("Apakah Anda ingin mengkonversi kembali? (y/n): ")
-		fmt.Scanln(&pilihan)
-
-		if pilihan == "n" {
-			break
-		}
+	sort.Strings(result["lulus"])
+	sort.Strings(result["tidak_lulus"])
+	if !reflect.DeepEqual(expectedResult, result) {
+		fmt.Printf("want: %v\ngot : %v\n", expectedResult, result)
+	} else {
+		fmt.Println("Well Done!")
 	}
 
 }
