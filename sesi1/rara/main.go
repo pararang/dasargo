@@ -1,17 +1,38 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+	"sort"
+)
 
 func main() {
-	fmt.Println(GroupingStundentByPoint(map[string]int{
-		"ikhsan":  30,
-		"sans":    70,
-		"ikh":     80,
-		"lintang": 55,
-		"indri":   79,
-		"rara":    80,
-		"hilmi":   60,
-	}))
+	input := map[string]int{
+		"A": 59,
+		"B": 60,
+		"C": 61,
+		"D": 0,
+		"E": 86,
+	}
+
+	expectedResult := map[string][]string{
+		"lulus": {
+			"C", "E",
+		},
+		"tidak_lulus": {
+			"A", "B", "D",
+		},
+	}
+
+	result := GroupingStundentByPoint(input)
+
+	sort.Strings(result["lulus"])
+	sort.Strings(result["tidak_lulus"])
+	if !reflect.DeepEqual(expectedResult, result) {
+		fmt.Printf("want: %v\ngot : %v\n", expectedResult, result)
+	} else {
+		fmt.Println("Well Done!")
+	}
 }
 
 func GroupingStundentByPoint(data map[string]int) map[string][]string {
