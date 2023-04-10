@@ -1,0 +1,18 @@
+{
+	"name": "golang-basic-live-code-2.3",
+	"course": "Dasar Pemrograman Backend",
+	"title": "Live Coding - Student Management System 3",
+	"order": 3,
+	"topics": [
+		"golang",
+		"first class function",
+		"pointer",
+		"map"
+	],
+	"image": "golang-basic",
+	"command": "go test",
+	"totalTestCase": 3,
+	"metadata": {
+		"type": "live-coding"
+	}
+}
